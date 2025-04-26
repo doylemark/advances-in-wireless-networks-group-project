@@ -1,0 +1,5 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y python3 python3-pip && rm -rf /var/lib/apt/lists/*
+COPY ipc_client.py /ipc_client.py
+ENTRYPOINT ["python3", "/ipc_client.py"] 
